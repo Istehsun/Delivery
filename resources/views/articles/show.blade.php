@@ -31,8 +31,20 @@
     <li class="list-group-item">
     	
      {{$comments->body}}
+    
+    @if ($comments->user_id==auth()->id() OR auth()->id()==1 )
+
+
+     <form method="POST" action="/index/{{$comments->id}}">
+          {{csrf_field()}}
+
+          <input type="hidden" name="_method" value="DELETE">
+           
+         <button type="submit" class="btn btn-danger position-absolute"> Delete Comment </button>
+         </form>
 
     </li>
+    @endif
 
 	@endforeach
 	</ul>
@@ -59,6 +71,9 @@
 
 			</div>
 		</form>
+         
+
+
 
 		@include('layouts.errors')
 	</div>

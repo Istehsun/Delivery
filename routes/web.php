@@ -36,5 +36,6 @@ Route::get('/index/{id}', 'ArticleController@show');
 
 Route::post('/index/{article}', 'CommentController@store');
 
+Route::Delete('/index/{comment}', 'CommentController@destroy');
 
 

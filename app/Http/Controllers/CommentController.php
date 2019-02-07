@@ -26,4 +26,16 @@ class CommentController extends Controller
 
         return back();
 	}
+    public function destroy(Comment $comment) {
+
+       $s= $comment::find($comment->id);
+
+      if ($s->delete()){
+        echo "Recored deleted Successfully";
+
+        return back();
+    }
+      
+
+    }
 }

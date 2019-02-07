@@ -22,8 +22,9 @@
           </div>
 
    @endforeach  
-
+@if(auth()->id()=='1')
   <div class="container"> <form action="/create"><button class="btn btn-primary" >  Create New Post </button>  </form></div>
 
+@endif
 
 @endsection
