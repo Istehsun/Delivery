@@ -12,10 +12,21 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style type="text/css">
+        
+    #brand
+    {
+        height: 80px;
+
+    }
+    </style>
+
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -28,32 +39,49 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Anas Khafegy Blog
+
+                    <a class="navbar-brand " href="{{ url('/') }}">
+                        Delivery  <img id="brand" class="navbar-brand navbar-right img-circle " src="https://previews.123rf.com/images/hayesnch/hayesnch1708/hayesnch170800003/83436499-vector-conceptual-food-delivery-logo-design-motorcycle-driver-carrying-plate-of-food.jpg">
                     </a>
+
+
+                     
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+
                     </ul>
+
+               
+
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        <li><a href="/index" class="text-center">Articles</a></li>
+
+                       
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} 
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
+                            
+                            </li>
+                 <li class="dropdown"  role="menu">
+                 <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Profile <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                     <li><a href="" >My Requests</a style="text-align:center;"></li>
+                     <li ><a href="/update/{{1}}" > Edit</a> </li>
+                      <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -64,9 +92,11 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
-                            </li>
+                 </ul>
+                   
+               </li>
                         @endif
+                  
                     </ul>
                 </div>
             </div>

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','address','phone','mobile'
     ];
 
     /**
@@ -27,9 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function comment()
+    public function item()
     {
-        return $this->hasOne('App\Comment');
+        return $this->hasOne('App\item');
     }
 
 }

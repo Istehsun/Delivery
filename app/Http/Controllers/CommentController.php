@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+
 use App\Comment;
 use App\Article;
 use App\User;
@@ -28,14 +30,28 @@ class CommentController extends Controller
 	}
     public function destroy(Comment $comment) {
 
-       $s= $comment::find($comment->id);
 
-      if ($s->delete()){
+      if ($comment::destroy($comment->id)){
         echo "Recored deleted Successfully";
 
         return back();
-    }
-      
+    }}
+     
+     public function edit(Comment $comment) {
 
+         return view('articles.comment',compact('comment'));
     }
+
+    public function update(Comment $comment) {
+
+        $c = Comment::Where('id',$comment->id)
+                           ->update([
+                          'body'=>"tryry"
+                        ]);
+
+        return redirect('/index');
+
+      }
+
+    
 }

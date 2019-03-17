@@ -9,15 +9,15 @@
 
 
 
-<form method="Post" action="/articles">
+<form method="Post" action="/storeitems">
     
    {{csrf_field()}}
     <div class="container">
        <h1>Publish A Post</h1>
-    <div class="form-group">
+ <!--    <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" id="title" name="title">
-    </div>
+    </div> -->
     
  
  

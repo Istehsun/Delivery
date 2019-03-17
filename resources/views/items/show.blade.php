@@ -43,6 +43,15 @@
          <button type="submit" class="btn btn-danger position-absolute"> Delete Comment </button>
          </form>
 
+      <form method="GET" action="/update/{{$comments->id}}">
+          {{csrf_field()}}
+
+        
+           
+         <button type="submit" class="btn btn-primary position-absolute"> Edit Comment </button>
+         </form>
+
+
     </li>
     @endif
 

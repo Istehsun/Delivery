@@ -31,11 +31,28 @@ Route::post('/articles', 'ArticleController@store');
 Route::get('/index/{id}', 'ArticleController@show');
 
 
+//save clinets data
+
+Route::post('/storeitems', 'ItemController@store');
+
+Route::get('/update/{user}', 'ItemController@edit');
+
+Route::post('/update/{user}', 'ItemController@update');
+
+Route::get('/send-sms/{id}', 'ItemController@send');
+
+
 //Comments Routes
 
 
 Route::post('/index/{article}', 'CommentController@store');
 
 Route::Delete('/index/{comment}', 'CommentController@destroy');
+
+
+/*Route::get('/update/{comment}', 'CommentController@edit');
+
+
+Route::post('/update/{comment}', 'CommentController@update');*/
 
 

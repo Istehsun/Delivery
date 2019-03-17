@@ -25,8 +25,9 @@ class ArticleController extends Controller
 
          $this->validate(request(),[
 
-        'title'   => 'required',
-        'body'    => 'required'
+        
+        'body'    => 'required',
+        'created_at'    => 'required'
                 ]);
   
 
